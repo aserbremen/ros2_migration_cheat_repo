@@ -1,0 +1,25 @@
+# Parameters reused in this yaml file
+define: &reused_topic "hello_world"
+
+# Parameters shared across all nodes or general parameters
+/**:
+  ros__parameters:
+    use_sim_time: true
+    start_rviz: false
+
+# Parameters for node1
+node1:
+  ros__parameters:
+    topic1: *reused_topic
+    topic2: "topic2"
+    init_position: [0.0, 0.0, 0.0]
+
+# Parameters for node2
+node2:
+  ros__parameters:
+    topic: *reused_topic
+    num_iter: 30
+    enable_node2: true
+
+# Remappings are hahndled in the python launch script
+
