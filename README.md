@@ -22,6 +22,15 @@
     └── trigger.srv
 ```
 
+## Launch files
+
+ROS2 allows python launch files. Suggested way of launching nodes:
+
+1. Create a `config.yaml` in the config folder which has shared and respective node parameters.
+2. Python script reads `config.yaml` and launches nodes
+    1. Check out `/launch/nodes.launch.py` for launching multiple nodes.
+    2. Sometimes it can be helpful to have additional command line arguments, which overwrite config parameters. Check out `/launch/nodes_with_cli_args.launch.py` for this use case.
+
 ## Custom message definitions
 ```C++
 // ROS1
